@@ -1,100 +1,156 @@
-# Lab 01 - Building and Packaging Java Application with Gradle
+# 🚀 DevOps Labs
 
-## 🎯 Objective
+![GitHub last commit](https://img.shields.io/github/last-commit/Mommmen007/iVolve)
+![GitHub repo size](https://img.shields.io/github/repo-size/Mommmen007/iVolve)
+![GitHub language count](https://img.shields.io/github/languages/count/Mommmen007/iVolve)
+![GitHub top language](https://img.shields.io/github/languages/top/Mommmen007/iVolve)
 
-Learn how to build and package a Java application using Gradle by performing the following tasks:
+Hands-on DevOps Labs documenting my learning journey from Build Tools to Kubernetes, CI/CD, GitOps, and Automation.
 
-- Install Gradle
-- Clone the project repository
-- Run unit tests
-- Build the application
-- Generate the JAR artifact
-- Run the application
-- Verify the application works correctly
+The repository contains practical labs covering build automation, containerization, orchestration, CI/CD, GitOps, Infrastructure as Code, and configuration management.
 
 ---
 
-## 📁 Repository
+# Learning Roadmap
 
-```bash
-git clone https://github.com/Ibrahim-Adel15/calculator-gradle.git
-```
-
----
-
-## 🛠 Prerequisites
-
-- Ubuntu (WSL)
-- Java 17
-- Gradle
-- Git
+| Module | Labs | Progress | Status |
+|---------|------|---------:|:------:|
+| Build Tools (Gradle & Maven) | 2 / 2 | 100% | ✅ |
+| Docker | 1 / 3 | 33% | 🟡 |
+| Kubernetes | 0 / ? | 0% | ⏳ |
+| Jenkins | 0 / ? | 0% | ⏳ |
+| ArgoCD | 0 / ? | 0% | ⏳ |
+| Ansible | 0 / ? | 0% | ⏳ |
 
 ---
 
-## 🚀 Steps
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/Ibrahim-Adel15/calculator-gradle.git
-cd calculator-gradle
-```
-
-### 2. Run Unit Tests
-
-```bash
-gradle test
-```
-
-### 3. Build the Application
-
-```bash
-gradle build
-```
-
-### 4. Verify Generated Artifact
-
-```bash
-ls build/libs
-```
-
-Expected output:
+# Repository Structure
 
 ```text
-calculator.jar
-```
-
-### 5. Run the Application
-
-```bash
-java -jar build/libs/calculator.jar
+.
+├── 01-Build-Tools-Gradle-Maven
+│   ├── Lab-01
+│   └── Lab-02
+│
+├── 02-Docker
+│   ├── Lab-01
+│   ├── Lab-02
+│   └── Lab-03
+│
+├── 03-Kubernetes
+│
+├── 04-Jenkins
+│
+├── 05-ArgoCD
+│
+└── 06-Ansible
 ```
 
 ---
 
-## 📦 Build Output
+# Completed Labs
 
-```
-build/
-└── libs/
-    └── calculator.jar
-```
+## Build Tools
+
+### Lab 01 — Gradle Basics
+
+- Gradle Installation
+- Project Initialization
+- Build Lifecycle
+- Gradle Tasks
+- Java Build Automation
+
+### Lab 02 — Maven Calculator
+
+- Maven Installation
+- Project Structure
+- pom.xml
+- Unit Testing
+- Build Lifecycle
+- Artifact Packaging
+- Executable JAR
 
 ---
 
-## ✅ Result
+## Docker
 
-- Unit tests passed successfully.
-- JAR artifact generated.
-- Application executed successfully.
+### Lab 01
+
+- Docker Installation
+- Images
+- Containers
+- Docker CLI
+
+### Lab 02
+
+- Dockerfile
+- Build Custom Images
+
+### Lab 03
+
+- Spring Boot Dockerization
+- Multi-stage Build
+- Running Java Containers
 
 ---
 
-## 📚 Skills Practiced
+# Technologies
 
-- Linux Commands
-- Git
-- Gradle
 - Java
+- Gradle
+- Maven
+- Docker
+- Kubernetes
+- Jenkins
+- ArgoCD
+- Ansible
+- Git
+- GitHub
+
+---
+
+# Skills Acquired
+
 - Build Automation
-- Software Packaging
+- Dependency Management
+- Unit Testing
+- Artifact Packaging
+- Containerization
+- CI/CD
+- GitOps
+- Infrastructure as Code
+- Configuration Management
+
+---
+
+# Progress
+
+```
+██████████░░░░░░░░░░ 50%
+```
+
+Completed
+
+- ✅ Gradle
+- ✅ Maven
+- ✅ Docker (Lab 3)
+
+In Progress
+
+- 🟡 Docker
+- ⏳ Kubernetes
+- ⏳ Jenkins
+- ⏳ ArgoCD
+- ⏳ Ansible
+
+---
+
+# Next Milestones
+
+- Kubernetes Pods
+- Deployments
+- Services
+- Helm
+- Jenkins Pipelines
+- ArgoCD Applications
+- Ansible Playbooks
