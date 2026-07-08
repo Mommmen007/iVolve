@@ -34,6 +34,8 @@ Verify the installation:
 java -version
 mvn -version
 ```
+<img width="886" height="254" alt="image" src="https://github.com/user-attachments/assets/1ec49eaf-9b43-4ff2-bc65-50ffd331c43c" />
+
 
 ## Build the Project
 
@@ -42,6 +44,8 @@ Clean and package the application:
 ```bash
 mvn clean package
 ```
+<img width="862" height="269" alt="image" src="https://github.com/user-attachments/assets/a0ca2d4a-fa97-4091-9468-4074b2c0afd1" />
+
 
 Or install it into the local Maven repository:
 
@@ -54,6 +58,8 @@ mvn clean install
 ```bash
 mvn test
 ```
+<img width="848" height="327" alt="image" src="https://github.com/user-attachments/assets/9b4d9d07-c080-41ba-bcf8-97149808a268" />
+
 
 ## Generated Artifact
 
@@ -64,12 +70,15 @@ Example:
 ```text
 target/calculator.jar
 ```
+<img width="879" height="83" alt="image" src="https://github.com/user-attachments/assets/0eaf64b8-ca38-4542-84c5-7dd09fcc04f9" />
+
 
 ## Run the Application
 
 ```bash
 java -jar target/calculator.jar
 ```
+<img width="868" height="176" alt="image" src="https://github.com/user-attachments/assets/434ca2ee-c08b-46c4-ae5d-ccb6c413e51f" />
 
 ## Verification
 
@@ -84,19 +93,3 @@ The application was successfully:
 
 * Java
 * Apache Maven
-
-## Screenshots
-
-Add screenshots of the following:
-
-1. `mvn -version`
-2. `mvn test`
-3. `mvn clean package`
-4. Generated JAR inside the `target` directory (`ls target`)
-5. Running the application using:
-
-```bash
-java -jar target/calculator.jar
-```
-
-6. Successful application output after execution.
