@@ -17,7 +17,8 @@ This repository contains my Docker hands-on labs completed during the Cloud DevO
 
 ---
 
-📚 Labs Included
+## 📚 Labs Included
+
 ✅ Lab 3 – Spring Boot Containerization
 Containerized a Java Spring Boot application.
 
