@@ -1,19 +1,68 @@
-# Docker Labs - Spring Boot Containerization
+# Docker Labs - Containerization & Image Optimization
 
-This repository contains **Lab 3** and **Lab 4** from the Cloud DevOps Accelerator program. The goal is to containerize a Java Spring Boot application using different Docker approaches and compare the resulting image sizes.
+This repository contains my Docker hands-on labs completed during the Cloud DevOps Accelerator Program. These labs cover the fundamentals of Docker, including containerizing applications, optimizing Docker images, and managing environment variables across different deployment environments.
 
-## Repository Structure
+## 📂Repository Structure
 
 ```text
 .
-├── Dockerfile.lab3
-├── Dockerfile.lab4
-├── src/
-├── pom.xml
+├── lab03/
+├── lab04/
+├── lab05/
+├── lab06/
 └── README.md
 ```
 
 > If you are using a single Dockerfile, rename it according to the lab before building.
+
+---
+
+📚 Labs Included
+✅ Lab 3 – Spring Boot Containerization
+Containerized a Java Spring Boot application.
+
+Used a Maven base image with Java 17.
+
+Built the application inside the container.
+
+Exposed port 8080.
+
+Ran the generated JAR file inside the container.
+
+✅ Lab 4 – Optimized Spring Boot Image
+Built the Spring Boot application outside Docker.
+
+Used a lightweight Java runtime image.
+
+Copied only the generated JAR into the image.
+
+Reduced image size by separating build and runtime.
+
+✅ Lab 5 – Multi-Stage Docker Build
+Implemented a multi-stage Docker build.
+
+Used Maven for the build stage.
+
+Used a lightweight Java runtime image for production.
+
+Copied only the compiled JAR from the builder stage.
+
+Built a smaller and more secure Docker image.
+
+✅ Lab 6 – Managing Docker Environment Variables
+Containerized a Python Flask application.
+
+Installed Flask inside the Docker image.
+
+Configured environment variables using:
+
+Runtime variables (docker run -e)
+
+Environment file (--env-file)
+
+Default Dockerfile variables (ENV)
+
+Exposed port 8080.
 
 ---
 
@@ -121,19 +170,137 @@ docker rm container2
 
 ---
 
+---
+
+# Lab 5 - Multi-Stage Docker Build
+
+### Objective
+
+Build and package the Spring Boot application using a multi-stage Docker build to reduce the final image size.
+
+### Build Stage
+
+- Maven
+- Java 17
+
+### Runtime Stage
+
+- Java 17 Runtime
+
+### Steps
+
+- Copy the application source code into the build stage
+- Build the application using Maven
+- Copy only the generated JAR into the runtime stage
+- Expose port 8080
+- Run the application
+
+### Build Image
+
+```bash
+docker build -f Dockerfile.lab5 -t app3 .
+```
+
+### Run Container
+
+```bash
+docker run -d --name container3 -p 8080:8080 app3
+```
+
+---
+
+# Lab 6 - Managing Docker Environment Variables
+
+### Objective
+
+Containerize a Python Flask application and manage environment variables using different Docker approaches.
+
+### Base Image
+
+- Python 3
+- Flask
+
+### Steps
+
+- Build the Docker image
+- Configure environment variables using:
+  - `docker run -e`
+  - `--env-file`
+  - `ENV` in the Dockerfile
+- Expose port 8080
+- Run the Flask application
+
+### Build Image
+
+```bash
+docker build -f Dockerfile.lab6 -t app4 .
+```
+
+### Run Development Container
+
+```bash
+docker run -d \
+--name app-dev \
+-p 8081:8080 \
+-e APP_MODE=development \
+-e APP_REGION=us-east \
+app4
+```
+
+### Run Staging Container
+
+```bash
+docker run -d \
+--name app-stage \
+-p 8082:8080 \
+--env-file staging.env \
+app4
+```
+
+### Run Production Container
+
+```bash
+docker run -d \
+--name app-prod \
+-p 8083:8080 \
+app4
+```
+
+---
+
+# Image Size Comparison
+
+| Lab | Build Method | Base Image | Expected Size |
+|------|--------------|------------|---------------|
+| Lab 3 | Build inside Docker | Maven + Java 17 | Large (~1 GB+) |
+| Lab 4 | Build outside Docker | Java 17 Runtime | Much Smaller (~200–300 MB) |
+| Lab 5 | Multi-stage Build | Maven + Java Runtime | Optimized (~200–300 MB) |
+| Lab 6 | Python Flask | Python 3 | Small (~150–250 MB) |
+
+> The exact image size depends on the Docker image version.
+
+---
+
 # Technologies Used
 
 - Docker
+- Dockerfile
+- Multi-stage Builds
+- Environment Variables
 - Java 17
 - Spring Boot
 - Maven
+- Python 3
+- Flask
 
 ---
 
 # Key Learning Outcomes
 
-- Writing Dockerfiles for Java applications.
+- Writing Dockerfiles for Java and Python applications.
 - Building Spring Boot applications inside Docker.
 - Running pre-built JAR files in containers.
+- Creating optimized images using multi-stage builds.
+- Managing environment variables during build and runtime.
 - Understanding the impact of base images on Docker image size.
-- Comparing Maven-based images with Java Runtime images.
+- Comparing different Docker image optimization techniques.
