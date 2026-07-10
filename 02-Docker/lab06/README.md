@@ -82,6 +82,7 @@ docker run -d \
 -e APP_REGION=us-east \
 lab06app
 ```
+<img width="441" height="237" alt="image" src="https://github.com/user-attachments/assets/3ae29a5a-8382-480b-98bb-6b6d6a817544" />
 
 ---
 
@@ -103,6 +104,7 @@ docker run -d \
 --env-file staging.env \
 lab06app
 ```
+<img width="421" height="216" alt="image" src="https://github.com/user-attachments/assets/0ac2be7c-3ee4-47f4-a473-d1160599e452" />
 
 ---
 
@@ -116,6 +118,7 @@ docker run -d \
 -p 8083:8080 \
 lab06app
 ```
+<img width="454" height="219" alt="image" src="https://github.com/user-attachments/assets/5853b1d3-7a4d-4c40-86df-55b1baf711ed" />
 
 ---
 
