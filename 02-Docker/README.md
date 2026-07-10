@@ -116,6 +116,8 @@ docker rm container2
 | Lab 4 | Build outside Docker | Java 17 Runtime | Much Smaller (~200–300 MB) |
 
 > The exact image size depends on the Docker image version.
+<img width="875" height="95" alt="image" src="https://github.com/user-attachments/assets/1461ecbf-94b6-4584-b792-d202a88d9476" />
+
 
 ---
 
