@@ -29,7 +29,7 @@ Each module contains practical exercises, Dockerfiles, Kubernetes manifests, aut
 | Module | Progress | Status |
 |---------|---------:|:------:|
 | 🔨 Build Tools (Gradle & Maven) | **2 / 2** | ✅ Completed |
-| 🐳 Docker | **6 / 9** | 🟡 In Progress |
+| 🐳 Docker | **8 / 9** | 🟡 In Progress |
 | ☸️ Kubernetes | **0 / 11** | ⏳ Upcoming |
 | ⚙️ Jenkins | **0 / 3** | ⏳ Upcoming |
 | 🚀 ArgoCD | **0 / 1** | ⏳ Upcoming |
