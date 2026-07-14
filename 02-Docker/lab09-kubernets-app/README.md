@@ -151,7 +151,8 @@ docker compose logs app
 
 ### Docker Compose Logs
 
-> Add your Docker Compose logs screenshot here.
+<img width="1447" height="849" alt="image" src="https://github.com/user-attachments/assets/2e13e8e5-7dea-4a6f-aeb9-96abf6ba66d8" />
+
 
 Example:
 
@@ -162,7 +163,8 @@ Server started on http://0.0.0.0:3000
 
 ### Application Running
 
-> Add a browser screenshot showing the application running on:
+<img width="730" height="465" alt="4Capture" src="https://github.com/user-attachments/assets/86096668-179b-49eb-9e14-7eb913f5b12c" />
+
 
 ```
 http://localhost:3000
