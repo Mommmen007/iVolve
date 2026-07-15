@@ -1,4 +1,4 @@
-<img width="1239" height="144" alt="image" src="https://github.com/user-attachments/assets/ca697ca3-1954-45a9-9a57-50db5a915b4d" /># Lab 10 & 11 - Kubernetes Taints, Namespaces & Resource Quotas
+# Lab 10 & 11 - Kubernetes Taints, Namespaces & Resource Quotas
 
 ## 📌 Overview
 
@@ -205,15 +205,19 @@ exceeded quota: pod-quota
 ---
 - Worker Taint Applied
 - Taint Verification
-  <img width="1239" height="144" alt="image" src="https://github.com/user-attachments/assets/e7ac29cd-e483-47b6-a2fe-c805680e9a13" />
+
+  <img width="808" height="93" alt="image" src="https://github.com/user-attachments/assets/2dc429ca-ad52-45fa-8620-a5e58f1a66de" />
 ---
 - Namespace Creation
+
   <img width="1239" height="144" alt="image" src="https://github.com/user-attachments/assets/38d0bb9a-0b8d-43c4-8c58-5df21401b931" />
 ---
 - ResourceQuota Applied
+
   <img width="252" height="113" alt="image" src="https://github.com/user-attachments/assets/5d3baae9-bbdf-42b6-a045-aa373807c3ec" />
 ---
 - ResourceQuota Verification
+
 - Quota Limit Error
   <img width="1138" height="125" alt="image" src="https://github.com/user-attachments/assets/563299cd-84c5-4660-9fa9-4e4a268dcdef" />
 
