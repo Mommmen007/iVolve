@@ -10,6 +10,9 @@ This repository contains my Docker hands-on labs completed during the Cloud DevO
 ├── lab04/
 ├── lab05/
 ├── lab06/
+├── lab07/
+├── lab08/
+├── lab09/
 └── README.md
 ```
 
