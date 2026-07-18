@@ -6,4 +6,4 @@ metadata:
 
 spec:
   hard:
-    pods: "2"
+    pods: "5"
