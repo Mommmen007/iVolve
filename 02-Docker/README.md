@@ -268,6 +268,185 @@ app4
 ```
 
 ---
+# Lab 7 - Docker Volumes & Bind Mounts
+
+### Objective
+
+Learn how to persist container data using Docker Volumes and share local files with containers using Bind Mounts.
+
+### Steps
+
+- Create a Docker volume for Nginx logs.
+- Create a local `index.html`.
+- Run an Nginx container.
+- Mount a Docker Volume to `/var/log/nginx`.
+- Mount the local HTML directory to `/usr/share/nginx/html`.
+- Verify the web page.
+- Modify the local HTML file.
+- Verify the changes without rebuilding the container.
+- Confirm logs are stored inside the Docker volume.
+
+### Create Volume
+
+```bash
+docker volume create nginx_logs
+```
+
+### Run Container
+
+```bash
+docker run -d \
+--name nginx \
+-p 8080:80 \
+-v nginx_logs:/var/log/nginx \
+-v $(pwd)/html:/usr/share/nginx/html \
+nginx
+```
+
+### Verify
+
+Open
+
+```
+http://localhost:8080
+```
+
+or
+
+```bash
+curl http://localhost:8080
+```
+
+Modify `index.html` locally and refresh the browser.
+
+### Verify Logs
+
+```bash
+docker volume inspect nginx_logs
+```
+
+---
+
+# Lab 8 - Docker Networking for Microservices
+
+### Objective
+
+Create a custom Docker bridge network and verify communication between frontend and backend containers.
+
+### Steps
+
+- Build frontend image.
+- Build backend image.
+- Create a custom Docker network.
+- Run backend container.
+- Run frontend1 on the custom network.
+- Run frontend2 on the default bridge network.
+- Verify container communication.
+- Remove the network after testing.
+
+### Create Network
+
+```bash
+docker network create \
+--subnet=192.168.10.0/24 \
+ivolve-network
+```
+
+### Build Images
+
+```bash
+docker build -t frontend ./frontend
+
+docker build -t backend .
+```
+
+### Run Backend
+
+```bash
+docker run -d \
+--name backend \
+--network ivolve-network \
+backend
+```
+
+### Run Frontend
+
+```bash
+docker run -d \
+--name frontend1 \
+--network ivolve-network \
+frontend
+```
+
+### Verify Network
+
+```bash
+docker network inspect ivolve-network
+```
+
+---
+
+# Lab 9 - Docker Compose Application Stack
+
+### Objective
+
+Deploy a multi-container Node.js and MySQL application using Docker Compose.
+
+### Services
+
+- Node.js Application
+- MySQL Database
+
+### Features
+
+- Docker Compose
+- Named Volumes
+- Environment Variables
+- Health Checks
+- Persistent Database Storage
+
+### Start Application
+
+```bash
+docker compose up -d
+```
+
+### Verify Running Containers
+
+```bash
+docker compose ps
+```
+
+### Verify Application
+
+```
+http://localhost:3000
+```
+
+### Health Endpoint
+
+```
+http://localhost:3000/health
+```
+
+### Readiness Endpoint
+
+```
+http://localhost:3000/ready
+```
+
+### View Logs
+
+```bash
+docker compose logs
+```
+
+### Stop Application
+
+```bash
+docker compose down
+```
+---
 
 # Image Size Comparison
 
@@ -277,6 +456,9 @@ app4
 | Lab 4 | Build outside Docker | Java 17 Runtime | Much Smaller (~200–300 MB) |
 | Lab 5 | Multi-stage Build | Maven + Java Runtime | Optimized (~200–300 MB) |
 | Lab 6 | Python Flask | Python 3 | Small (~150–250 MB) |
+| Lab 7 | Official Nginx Image | nginx | Official Image |
+| Lab 8 | Python Microservices | Python 3 | Small |
+| Lab 9 | Docker Compose Stack | Node.js + MySQL | Multi-container |
 
 > The exact image size depends on the Docker image version.
 
@@ -285,14 +467,21 @@ app4
 # Technologies Used
 
 - Docker
+- Docker Compose
+- Docker Volumes
+- Bind Mounts
+- Docker Networks
 - Dockerfile
 - Multi-stage Builds
 - Environment Variables
-- Java 17
 - Spring Boot
+- Java 17
 - Maven
-- Python 3
+- Python
 - Flask
+- Node.js
+- MySQL
+- Nginx
 
 ---
 
@@ -305,3 +494,6 @@ app4
 - Managing environment variables during build and runtime.
 - Understanding the impact of base images on Docker image size.
 - Comparing different Docker image optimization techniques.
+- Enabling communication between multiple containers.
+- Deploying complete application stacks using Docker Compose.
+- Working with health checks and persistent storage.
