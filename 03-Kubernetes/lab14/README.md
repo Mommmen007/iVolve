@@ -208,6 +208,7 @@ mysql
 performance_schema
 sys
 ```
+<img width="1238" height="646" alt="image" src="https://github.com/user-attachments/assets/235d3eba-f95f-4a3c-baf4-fcb0784280bb" />
 
 ---
 
@@ -224,6 +225,9 @@ Error:
 pods "mysql-0" is forbidden:
 exceeded quota
 ```
+<img width="1172" height="306" alt="image" src="https://github.com/user-attachments/assets/5780bd01-41af-4332-92e4-6f84ce080fe1" />
+
+
 
 The issue was resolved by increasing the Pod quota and reapplying the ResourceQuota.
 
