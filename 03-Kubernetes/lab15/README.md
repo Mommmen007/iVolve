@@ -138,6 +138,9 @@ Open:
 http://localhost:3000
 ```
 
+
+<img width="640" height="535" alt="image" src="https://github.com/user-attachments/assets/df925520-784f-4078-ab81-e032e5d8dfe3" />
+
 ---
 
 ## ✅ Verification
