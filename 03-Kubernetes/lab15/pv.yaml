@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
-
 metadata:
-  name: mysql-data-pv
+  name: app-logs-pv
 
 spec:
   capacity:
@@ -14,5 +13,4 @@ spec:
   persistentVolumeReclaimPolicy: Retain
 
   hostPath:
-    path: /mnt/app-logs
-
+    path: /mnt/data/app-logs
