@@ -98,6 +98,9 @@ kubectl get pods -n ivolve
 
 The Node.js Pods should reach the **Running** state after the Init Container completes successfully.
 
+
+<img width="714" height="149" alt="image" src="https://github.com/user-attachments/assets/2c13658c-ee98-4ed1-a50e-f9ad6891352d" />
+
 ---
 
 ### 6. View Init Container Logs
@@ -111,6 +114,9 @@ The only output displayed was:
 ```text
 mysql: [Warning] Using a password on the command line interface can be insecure.
 ```
+
+<img width="1053" height="182" alt="image" src="https://github.com/user-attachments/assets/b704a6b1-a6f7-45fe-a241-bf5d4f3e4f7b" />
+
 
 This is a MySQL warning, **not an error**, indicating that the SQL commands executed successfully.
 
@@ -142,6 +148,8 @@ Output included:
 ivolve
 ```
 
+<img width="293" height="217" alt="image" src="https://github.com/user-attachments/assets/3ea8ddf2-7205-4933-a4ee-49a80286be30" />
+
 ---
 
 ### 8. Verify User Permissions
@@ -159,6 +167,8 @@ SHOW GRANTS FOR 'appuser'@'%';
 ```
 
 Output confirmed that **appuser** has full privileges on the **ivolve** database.
+
+<img width="554" height="176" alt="image" src="https://github.com/user-attachments/assets/db37cda3-efc3-4bf1-92d4-56d70872da93" />
 
 ---
 
