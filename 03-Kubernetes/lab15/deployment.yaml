@@ -24,50 +24,6 @@ spec:
         effect: "NoSchedule"
 
       
-      initContainers:
-      - name: init-db
-        image: mysql:5.7
-
-        command:
-          - sh
-          - -c
-          - |
-            mysql \
-            -h $DB_HOST \
-            -u root \
-            -p$MYSQL_ROOT_PASSWORD <<EOF
-            CREATE DATABASE IF NOT EXISTS ivolve;
-            CREATE USER IF NOT EXISTS '$DB_USER'@'%' IDENTIFIED BY '$DB_PASSWORD';
-            GRANT ALL PRIVILEGES ON ivolve.* TO '$DB_USER'@'%';
-            FLUSH PRIVILEGES;
-            EOF
-
-        env:
-          - name: DB_HOST
-            valueFrom:
-              configMapKeyRef:
-                name: mysql-config
-                key: DB_HOST
-
-          - name: DB_USER
-            valueFrom:
-              configMapKeyRef:
-                name: mysql-config
-                key: DB_USER
-
-          - name: DB_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mysql-secret
-                key: DB_PASSWORD
-
-          - name: MYSQL_ROOT_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mysql-secret
-                key: MYSQL_ROOT_PASSWORD
-
-      
       containers:
       - name: nodejs-app
         image: momen007/ivolve-nodejs-app:latest
