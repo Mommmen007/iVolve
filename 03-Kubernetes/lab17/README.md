@@ -39,6 +39,7 @@ resources:
 ```bash
 kubectl apply -f deployment.yaml -n ivolve
 ```
+<img width="1052" height="135" alt="image" src="https://github.com/user-attachments/assets/f0705279-272a-4723-8ed0-a55ca174f472" />
 
 ---
 
@@ -63,6 +64,9 @@ The deployment showed:
 * CPU Limit = **2**
 * Memory Limit = **2Gi**
 
+
+<img width="1078" height="466" alt="image" src="https://github.com/user-attachments/assets/d65213fc-77a7-4206-8b88-9949f2a014c0" />
+
 ---
 
 ### 4. ResourceQuota Issue
@@ -80,6 +84,8 @@ The ReplicaSet showed:
 ```text
 exceeded quota: pod-quota
 ```
+<img width="1435" height="152" alt="image" src="https://github.com/user-attachments/assets/d4cc4dcf-ba1a-48fd-aa5b-61ee35c2f0f9" />
+
 
 The namespace had reached the maximum number of allowed Pods.
 
@@ -100,6 +106,8 @@ Hard: 10
 
 The rollout completed successfully.
 
+<img width="1469" height="210" alt="image" src="https://github.com/user-attachments/assets/ee655636-96a7-4b9c-8e23-6434f8c1b854" />
+
 ---
 
 ### 5. Verified QoS
@@ -118,6 +126,8 @@ QoS Class: Burstable
 
 This confirms that resource requests and limits were successfully applied.
 
+<img width="605" height="241" alt="image" src="https://github.com/user-attachments/assets/92e254a8-6f14-41d3-a0db-f829b4ef8c85" />
+
 ---
 
 ### 6. Metrics Server
@@ -133,6 +143,8 @@ returned:
 ```text
 Metrics API not available
 ```
+<img width="1073" height="87" alt="image" src="https://github.com/user-attachments/assets/563a899c-42cf-4b3b-b3b8-6baa445fa970" />
+
 
 This indicates that **Metrics Server** is not installed or configured in the Kubernetes cluster.
 
@@ -176,20 +188,6 @@ If the namespace ResourceQuota does not allow creating additional Pods, the roll
 
 ---
 
-## 📸 Screenshots
-
-Add screenshots for:
-
-* Deployment applied successfully
-* `kubectl get pods`
-* `kubectl describe deployment`
-* `kubectl describe pod`
-* `QoS Class: Burstable`
-* ResourceQuota before and after modification
-* Successful rollout
-* Metrics API error
-
----
 
 ## ✅ Verification Commands
 
@@ -211,33 +209,7 @@ kubectl top pod -n ivolve
 
 ---
 
-## 🎯 Interview Questions
 
-### What is the difference between Requests and Limits?
-
-**Requests** define the minimum CPU and Memory required by a container and are used by the scheduler.
-
-**Limits** define the maximum CPU and Memory the container can consume during runtime.
-
----
-
-### What is a QoS Class?
-
-A QoS Class determines how Kubernetes prioritizes Pods when the node experiences resource pressure.
-
----
-
-### Why did the Rolling Update fail?
-
-Because the namespace ResourceQuota limited the maximum number of Pods. Kubernetes couldn't create a new Pod before deleting an old one.
-
----
-
-### Why did `kubectl top` fail?
-
-Because the Kubernetes cluster did not have a working Metrics Server, so the Metrics API was unavailable.
-
----
 
 ## 🚀 Outcome
 
