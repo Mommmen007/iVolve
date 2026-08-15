@@ -121,6 +121,7 @@ Forward port `9100`:
 ```bash
 kubectl port-forward -n monitoring pod/node-exporter-rd7ts 9100:9100
 ```
+<img width="1167" height="190" alt="image" src="https://github.com/user-attachments/assets/2740854c-4dc1-40ab-ae61-afc3e1584b34" />
 
 Then test the metrics endpoint:
 
